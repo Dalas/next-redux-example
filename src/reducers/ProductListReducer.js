@@ -51,5 +51,8 @@ export default function productListReducer(state = initialState, action) {
         case actionTypes.DECREMENT_PRODUCT:
             state.products[ action.id ].availableCount += 1;
             return state;
+
+        default:
+            return state
     }
 }

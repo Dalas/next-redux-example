@@ -5,7 +5,7 @@
 import productListReducer from './ProductListReducer';
 import shoppingCartReducer from './ShoppingCartReducer';
 
-export default {
-    productListReducer: productListReducer,
-    shoppingCartReducer: shoppingCartReducer
-}
+export default [
+    productListReducer,
+    shoppingCartReducer
+]

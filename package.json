@@ -12,6 +12,7 @@
   "author": "Dalas",
   "license": "ISC",
   "dependencies": {
+    "babel-preset-stage-0": "^6.16.0",
     "next": "^1.2.3",
     "react-redux": "^5.0.1",
     "redux": "^3.6.0",

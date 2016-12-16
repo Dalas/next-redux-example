@@ -2,7 +2,7 @@ import React from 'react';
 import Product from './ProductComponent';
 
 
-export default ({ products }) => {
+export default ({ products, actions }) => {
     return (
         <div className="products-container">
             { products.map( (product, index) =>

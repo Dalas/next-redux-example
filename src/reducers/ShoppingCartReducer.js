@@ -26,5 +26,8 @@ export default function shoppingCartReducer(state = initialState, action) {
         case actionTypes.DECREMENT_PRODUCT:
             state.products[ action.id ].count -= 1;
             return state;
+
+        default:
+            return state
     }
 }

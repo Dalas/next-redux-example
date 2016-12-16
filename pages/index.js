@@ -1,5 +1,7 @@
 import React from 'react'
-import ProductList from '../src/components/ProductListComponent';
+import { Provider } from 'react-redux';
+import store from '../src/store/Store';
+import ProductList from '../src/containers/ProductListContainer';
 
 
 export default class extends React.Component {
@@ -38,9 +40,9 @@ export default class extends React.Component {
 
     render() {
         return (
-            <div>
-                <ProductList products={ this.state.products } />
-            </div>
+            <Provider store={ store }>
+                <ProductList />
+            </Provider>
         )
     }
 }
