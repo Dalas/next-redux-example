@@ -9,7 +9,7 @@ const initialState = {
     products: {}
 };
 
-export default function shopingCartReducer(state = initialState, action) {
+export default function shoppingCartReducer(state = initialState, action) {
     switch( action.type ) {
         case actionTypes.ADD_TO_CART:
             state.products[ action.product.id ] = action.product;
