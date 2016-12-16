@@ -1,7 +1,7 @@
 import React from 'react'
 import Head from 'next/head';
 import { Provider } from 'react-redux';
-import store from '../src/store/Store';
+import productListStore from '../src/store/productListStore';
 import ProductList from '../src/containers/ProductListContainer';
 import ShoppingCart from '../src/components/ShoppingCartComponent';
 
@@ -27,7 +27,7 @@ export default class extends React.Component {
                     <link rel="stylesheet" href="/static/css/font-awesome.min.css" />
                 </Head>
 
-                <Provider store={ store }>
+                <Provider store={ productListStore }>
                     <ProductList />
                 </Provider>
                 <ShoppingCart />
