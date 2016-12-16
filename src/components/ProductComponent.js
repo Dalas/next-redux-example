@@ -36,6 +36,7 @@ export default ({ title, imgUrl, description, cost }) => {
                     color: #ffffff;
                     font-weight: bold;
                     font-size: 14px;
+                    cursor: pointer;
                 }
 
                 .productWrapper {
