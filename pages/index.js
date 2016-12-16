@@ -34,8 +34,7 @@ export default class extends React.Component {
 
                 <style jsx>{`
                     div {
-                        display: flex;
-                        justify-content: space-around;
+                        text-align: justify;
                         width: 1000px;
                         margin: 0 auto;
                     }

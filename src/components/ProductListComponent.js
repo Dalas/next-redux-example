@@ -17,9 +17,9 @@ export default ({ products, actions }) => {
 
             <style jsx>{`
                 .products-container {
-                    display: flex;
+                    display: inline-block;
                     width: 700px;
-                    justify-content: space-between;
+                    text-align: justify;
                 }
             `}</style>
         </div>

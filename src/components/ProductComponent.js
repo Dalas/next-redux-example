@@ -44,6 +44,8 @@ export default ({ title, imgUrl, description, cost }) => {
                     background: #e2e2e2;
                     padding: 10px;
                     border-radius: 1px;
+                    display: inline-block;
+                    margin: 0 5px;
                 }
 
                 .imageWrapper {
