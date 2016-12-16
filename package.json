@@ -1,0 +1,20 @@
+{
+  "name": "next-redux-example",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "next build",
+    "start": "next start",
+    "dev": "next"
+  },
+  "author": "Dalas",
+  "license": "ISC",
+  "dependencies": {
+    "next": "^1.2.3",
+    "react-redux": "^5.0.1",
+    "redux": "^3.6.0",
+    "styled-jsx": "^0.1.0"
+  }
+}
