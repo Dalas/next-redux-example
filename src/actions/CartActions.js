@@ -5,17 +5,17 @@
 import * as actionTypes from './ActionTypes';
 
 
-export function addToCart (id) => {
+export function addToCart (product) => {
     return {
         type: actionTypes.ADD_TO_CART,
-        id: id
+        product: product
     }
 }
 
-export function removeFromCart (id) => {
+export function removeFromCart (product) => {
     return {
         type: actionTypes.REMOVE_FROM_CART,
-        id: id
+        product: product
     }
 }
 
