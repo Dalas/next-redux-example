@@ -47,12 +47,14 @@ export default function productListReducer(state = initialState, action) {
         case actionTypes.ADD_TO_CART:
 
             product = _.find(newState.products, { id: action.product.id });
+            product.availableCount -= 1;
             product.addedToCart = true;
 
             return newState;
 
         case actionTypes.REMOVE_FROM_CART:
             product = _.find(newState.products, { id: action.product.id });
+            product.availableCount += action.product.count;
             product.addedToCart = false;
             return newState;
 

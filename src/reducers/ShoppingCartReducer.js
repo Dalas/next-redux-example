@@ -18,7 +18,6 @@ export default function shoppingCartReducer(state = initialState, action) {
         case actionTypes.ADD_TO_CART:
             newState.productsInCart[ action.product.id ] = action.product;
             newState.productsInCart[ action.product.id ].count = 1;
-            newState.productsInCart[ action.product.id ].availableCount -= 1;
 
             newState.totalCost += action.product.cost;
 
@@ -32,14 +31,12 @@ export default function shoppingCartReducer(state = initialState, action) {
 
         case actionTypes.INCREMENT_PRODUCT:
             newState.productsInCart[ action.id ].count += 1;
-            newState.productsInCart[ action.id ].availableCount -= 1;
 
             newState.totalCost += newState.productsInCart[ action.id ].cost;
             return newState;
 
         case actionTypes.DECREMENT_PRODUCT:
             newState.productsInCart[ action.id ].count -= 1;
-            newState.productsInCart[ action.id ].availableCount += 1;
 
             newState.totalCost -= newState.productsInCart[ action.id ].cost;
             return newState;

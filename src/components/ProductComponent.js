@@ -5,7 +5,7 @@
 import React from 'react';
 
 
-export default ({ title, imgUrl, description, cost, added, addToCart, removeFromCart }) => {
+export default ({ title, availableCount, imgUrl, description, cost, added, addToCart, removeFromCart }) => {
     return (
         <div className="productWrapper">
             <h2>{ title }</h2>
@@ -13,7 +13,7 @@ export default ({ title, imgUrl, description, cost, added, addToCart, removeFrom
                 <img src={ imgUrl } />
             </div>
             <p>Cost: ${ cost }</p>
-            <p>Available count: { cost }$</p>
+            <p>Available count: { availableCount }</p>
             <p>{ description }</p>
 
             <button className={ added ? 'remove' : 'add' } onClick={ added ? removeFromCart : addToCart } >{ added ? 'Remove from cart!' : 'Add to cart!' }</button>

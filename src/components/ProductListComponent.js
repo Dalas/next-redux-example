@@ -8,6 +8,7 @@ export default ({ products, actions }) => {
             { products.map( (product, index) =>
                 <Product
                     title={ product.title }
+                    availableCount={ product.availableCount }
                     imgUrl={ product.imgUrl }
                     description={ product.description }
                     cost={ product.cost }
