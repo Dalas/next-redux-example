@@ -14,7 +14,7 @@ export default ({ title, availableCount, imgUrl, description, cost, added, disco
             </div>
             <p>Cost: ${ cost }</p>
             <p>Discount: ${ parseFloat(cost * discount / 100) }</p>
-            <p>Available count: ${ availableCount }</p>
+            <p>Available count: { availableCount }</p>
             <p>{ description }</p>
 
             <button className={ added ? 'remove' : 'add' } onClick={ added ? removeFromCart : addToCart } >{ added ? 'Remove from cart!' : 'Add to cart!' }</button>
