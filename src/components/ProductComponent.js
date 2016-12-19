@@ -5,7 +5,7 @@
 import React from 'react';
 
 
-export default ({ title, imgUrl, description, cost }) => {
+export default ({ title, imgUrl, description, cost, added, addToCart }) => {
     return (
         <div className="productWrapper">
             <h2>{ title }</h2>
@@ -14,7 +14,8 @@ export default ({ title, imgUrl, description, cost }) => {
             </div>
             <p>Cost: { cost }$</p>
             <p>{ description }</p>
-            <button>Add to cart!</button>
+            <p>{ added.toString() }</p>
+            <button onClick={ addToCart } >Add to cart!</button>
 
             <style jsx>{`
                 h2 {

@@ -5,10 +5,10 @@
 import React from 'react';
 
 
-export default ({}) => {
+export default ({ title }) => {
     return (
         <div>
-            <p className="title">Name</p>
+            <p className="title">title</p>
             <p>Count: <i className="fa fa-plus-square" /> 12 <i className="fa fa-minus-square" /></p>
 
             <style jsx>{`

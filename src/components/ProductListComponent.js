@@ -3,6 +3,7 @@ import Product from './ProductComponent';
 
 
 export default ({ products, actions }) => {
+    console.log(products);
     return (
         <div className="products-container">
             { products.map( (product, index) =>
@@ -11,7 +12,9 @@ export default ({ products, actions }) => {
                     imgUrl={ product.imgUrl }
                     description={ product.description }
                     cost={ product.cost }
+                    added={ product.addedToCart }
                     key={ index }
+                    addToCart={() => actions.addToCart( product ) }
                 />
             ) }
 

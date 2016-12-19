@@ -8,7 +8,7 @@ import { bindActionCreators } from 'redux';
 import * as actions from '../actions/CartActions';
 
 const mapStateToProps = ( state ) => {
-    return state;
+    return state['scReducer'];
 };
 
 const mapDispatchToProps = ( dispatch ) => {

@@ -6,12 +6,20 @@ import React from 'react';
 import ShoppingCartItem from './ShoppingCartItemComponent';
 
 
-export default ({  }) => {
+export default ({ productsInCart, actions }) => {
+    console.log(productsInCart);
     return (
         <div className="sc-container">
             <p className="summ-cost">Summ: { 12 } $</p>
 
-            <ShoppingCartItem />
+            { Object.keys( productsInCart ).map(function(key){
+                return (
+                    <ShoppingCartItem
+                        title={ productsInCart[key].title }
+                        key={ key }
+                    />
+                )
+            }) }
 
             <style jsx>{`
                 .sc-container {

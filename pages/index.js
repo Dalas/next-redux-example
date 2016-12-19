@@ -1,8 +1,7 @@
 import React from 'react'
 import Head from 'next/head';
 import { Provider } from 'react-redux';
-import productListStore from '../src/store/productListStore';
-import shoppingCartStore from '../src/store/shoppingcartStore';
+import store from '../src/store/mainStore';
 import ProductList from '../src/containers/ProductListContainer';
 import ShoppingCart from '../src/containers/ShoppingCartContainer';
 
@@ -10,6 +9,8 @@ import ShoppingCart from '../src/containers/ShoppingCartContainer';
 export default class extends React.Component {
     constructor(props) {
         super(props);
+
+        this.store = store;
     }
 
     static async getInitialProps({req}) {
@@ -28,11 +29,11 @@ export default class extends React.Component {
                     <link rel="stylesheet" href="/static/css/font-awesome.min.css" />
                 </Head>
 
-                <Provider store={ productListStore }>
+                <Provider store={ this.store }>
                     <ProductList />
                 </Provider>
 
-                <Provider store={ shoppingCartStore }>
+                <Provider store={ this.store }>
                     <ShoppingCart />
                 </Provider>
 
