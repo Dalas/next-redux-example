@@ -7,6 +7,7 @@ import ShoppingCartItem from './ShoppingCartItemComponent';
 
 
 export default ({ productsInCart, totalCost, actions }) => {
+    console.log(productsInCart)
     return (
         <div className="sc-container">
             <p className="summ-cost">Summ: { totalCost } $</p>
@@ -16,6 +17,7 @@ export default ({ productsInCart, totalCost, actions }) => {
                     <ShoppingCartItem
                         title={ productsInCart[key].title }
                         count={ productsInCart[key].count }
+                        maxCount={  productsInCart[key].maxCount }
                         cost={ productsInCart[key].cost }
                         incrementCount={ () => actions.incrementProductCount( productsInCart[key].id ) }
                         decrementCount={ () => actions.decrementProductCount( productsInCart[key].id ) }

@@ -17,6 +17,7 @@ export default function shoppingCartReducer(state = initialState, action) {
     switch( action.type ) {
         case actionTypes.ADD_TO_CART:
             newState.productsInCart[ action.product.id ] = action.product;
+            newState.productsInCart[ action.product.id ].maxCount = action.product.availableCount + 1;
             newState.productsInCart[ action.product.id ].count = 1;
 
             newState.totalCost += action.product.cost;

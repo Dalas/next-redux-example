@@ -5,12 +5,19 @@
 import React from 'react';
 
 
-export default ({ title, count, cost, incrementCount, decrementCount }) => {
+export default ({ title, count, maxCount, cost, incrementCount, decrementCount }) => {
+    console.log(count)
+    console.log(maxCount)
     return (
         <div>
             <p className="title">{ title }</p>
             <p>Cost: ${ parseFloat(cost).toFixed(2) }</p>
-            <p>Count: <i className="fa fa-minus-square" onClick={ decrementCount } /> { count } <i className="fa fa-plus-square" onClick={ incrementCount } /></p>
+            <p>
+                Count:
+                &nbsp;{ count > 1 ? <i className="fa fa-minus-square" onClick={ decrementCount } /> : ''}
+                &nbsp;{ count }
+                &nbsp;{ count < maxCount ? <i className="fa fa-plus-square" onClick={ incrementCount } /> : ''}
+            </p>
             <p>Total cost: ${ parseFloat(cost * count).toFixed(2) }</p>
 
             <style jsx>{`
