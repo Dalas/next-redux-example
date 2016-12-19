@@ -16,6 +16,9 @@ export default ({ productsInCart, actions }) => {
                 return (
                     <ShoppingCartItem
                         title={ productsInCart[key].title }
+                        count={ productsInCart[key].count }
+                        incrementCount={ () => actions.incrementProductCount( productsInCart[key].id ) }
+                        decrementCount={ () => actions.decrementProductCount( productsInCart[key].id ) }
                         key={ key }
                     />
                 )
@@ -26,8 +29,13 @@ export default ({ productsInCart, actions }) => {
                     width: 200px;
                     border: 1px solid black;
                     min-height: 10px;
+                    padding: 20px 25px;
                     display: inline-block;
                     vertical-align: top;
+                }
+
+                .summ-cost {
+                    margin-top: 0;
                 }
             `}</style>
         </div>

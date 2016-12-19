@@ -57,12 +57,12 @@ export default function productListReducer(state = initialState, action) {
             return newState;
 
         case actionTypes.INCREMENT_PRODUCT:
-            product = _.find(newState.products, { id: action.product.id });
+            product = _.find(newState.products, { id: action.id });
             product.availableCount -= 1;
             return newState;
 
         case actionTypes.DECREMENT_PRODUCT:
-            product = _.find(newState.products, { id: action.product.id });
+            product = _.find(newState.products, { id: action.id });
             product.availableCount += 1;
             return newState;
 

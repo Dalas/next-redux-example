@@ -5,11 +5,11 @@
 import React from 'react';
 
 
-export default ({ title }) => {
+export default ({ title, count, incrementCount, decrementCount }) => {
     return (
         <div>
-            <p className="title">title</p>
-            <p>Count: <i className="fa fa-plus-square" /> 12 <i className="fa fa-minus-square" /></p>
+            <p className="title">{ title }</p>
+            <p>Count: <i className="fa fa-minus-square" onClick={ decrementCount } /> { count } <i className="fa fa-plus-square" onClick={ incrementCount } /></p>
 
             <style jsx>{`
                 div {

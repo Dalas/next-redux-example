@@ -15,6 +15,7 @@ export default ({ products, actions }) => {
                     added={ product.addedToCart }
                     key={ index }
                     addToCart={() => actions.addToCart( product ) }
+                    removeFromCart={() => actions.removeFromCart( product )}
                 />
             ) }
 

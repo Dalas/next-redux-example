@@ -5,7 +5,7 @@
 import React from 'react';
 
 
-export default ({ title, imgUrl, description, cost, added, addToCart }) => {
+export default ({ title, imgUrl, description, cost, added, addToCart, removeFromCart }) => {
     return (
         <div className="productWrapper">
             <h2>{ title }</h2>
@@ -14,8 +14,8 @@ export default ({ title, imgUrl, description, cost, added, addToCart }) => {
             </div>
             <p>Cost: { cost }$</p>
             <p>{ description }</p>
-            <p>{ added.toString() }</p>
-            <button onClick={ addToCart } >Add to cart!</button>
+
+            <button className={ added ? 'remove' : 'add' } onClick={ added ? removeFromCart : addToCart } >{ added ? 'Remove from cart!' : 'Add to cart!' }</button>
 
             <style jsx>{`
                 h2 {
@@ -31,13 +31,20 @@ export default ({ title, imgUrl, description, cost, added, addToCart }) => {
 
                 button {
                     width: 100%;
-                    background-color: #0a9a0a;
                     border: 0;
                     padding: 8px;
                     color: #ffffff;
                     font-weight: bold;
                     font-size: 14px;
                     cursor: pointer;
+                }
+
+                button.remove {
+                    background-color: #d83838;
+                }
+
+                button.add {
+                    background-color: #0a9a0a;
                 }
 
                 .productWrapper {
