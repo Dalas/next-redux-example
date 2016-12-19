@@ -3,7 +3,6 @@ import Product from './ProductComponent';
 
 
 export default ({ products, actions }) => {
-    console.log(products);
     return (
         <div className="products-container">
             { products.map( (product, index) =>

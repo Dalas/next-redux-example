@@ -12,7 +12,8 @@ export default ({ title, imgUrl, description, cost, added, addToCart, removeFrom
             <div className="imageWrapper">
                 <img src={ imgUrl } />
             </div>
-            <p>Cost: { cost }$</p>
+            <p>Cost: ${ cost }</p>
+            <p>Available count: { cost }$</p>
             <p>{ description }</p>
 
             <button className={ added ? 'remove' : 'add' } onClick={ added ? removeFromCart : addToCart } >{ added ? 'Remove from cart!' : 'Add to cart!' }</button>

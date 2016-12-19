@@ -6,17 +6,17 @@ import React from 'react';
 import ShoppingCartItem from './ShoppingCartItemComponent';
 
 
-export default ({ productsInCart, actions }) => {
-    console.log(productsInCart);
+export default ({ productsInCart, totalCost, actions }) => {
     return (
         <div className="sc-container">
-            <p className="summ-cost">Summ: { 12 } $</p>
+            <p className="summ-cost">Summ: { totalCost } $</p>
 
             { Object.keys( productsInCart ).map(function(key){
                 return (
                     <ShoppingCartItem
                         title={ productsInCart[key].title }
                         count={ productsInCart[key].count }
+                        cost={ productsInCart[key].cost }
                         incrementCount={ () => actions.incrementProductCount( productsInCart[key].id ) }
                         decrementCount={ () => actions.decrementProductCount( productsInCart[key].id ) }
                         key={ key }
