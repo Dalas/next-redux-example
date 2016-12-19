@@ -2,8 +2,9 @@ import React from 'react'
 import Head from 'next/head';
 import { Provider } from 'react-redux';
 import productListStore from '../src/store/productListStore';
+import shoppingCartStore from '../src/store/shoppingcartStore';
 import ProductList from '../src/containers/ProductListContainer';
-import ShoppingCart from '../src/components/ShoppingCartComponent';
+import ShoppingCart from '../src/containers/ShoppingCartContainer';
 
 
 export default class extends React.Component {
@@ -30,7 +31,10 @@ export default class extends React.Component {
                 <Provider store={ productListStore }>
                     <ProductList />
                 </Provider>
-                <ShoppingCart />
+
+                <Provider store={ shoppingCartStore }>
+                    <ShoppingCart />
+                </Provider>
 
                 <style jsx>{`
                     div {
