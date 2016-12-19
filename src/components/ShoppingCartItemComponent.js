@@ -6,8 +6,6 @@ import React from 'react';
 
 
 export default ({ title, count, maxCount, cost, incrementCount, decrementCount }) => {
-    console.log(count)
-    console.log(maxCount)
     return (
         <div>
             <p className="title">{ title }</p>

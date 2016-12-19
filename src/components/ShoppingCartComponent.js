@@ -7,7 +7,6 @@ import ShoppingCartItem from './ShoppingCartItemComponent';
 
 
 export default ({ productsInCart, totalCost, actions }) => {
-    console.log(productsInCart)
     return (
         <div className="sc-container">
             <p className="summ-cost">Summ: { totalCost } $</p>
