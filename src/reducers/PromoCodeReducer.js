@@ -2,12 +2,13 @@
  * Created by yura on 19.12.16.
  */
 
-import { ENTER_PROMO } from '../actions/ActionTypes';
+import { ENTER_PROMO, REMOVE_PROMO } from '../actions/ActionTypes';
 import _ from 'lodash';
 
 const initialState = {
     promoCode: '',
-    discount: 0
+    discount: 0,
+    entered: false
 };
 
 const discounts = {
@@ -26,9 +27,13 @@ function getDiscount(promoCode) {
 }
 
 export default function(state = initialState, action) {
+    console.log(action)
     switch (action.type) {
         case ENTER_PROMO:
-            return Object.assign({}, state, { promoCode: action.promoCode, discount: getDiscount(action.promoCode) });
+            return Object.assign({}, state, { promoCode: action.promoCode, discount: getDiscount(action.promoCode), entered: true });
+
+        case REMOVE_PROMO:
+            return Object.assign({}, state, { promoCode: '', discount: 0, entered: false });
 
         default:
             return state;

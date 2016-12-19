@@ -25,12 +25,20 @@ export default class extends React.Component {
     }
 
     render() {
+        let input = this.props.entered ?
+            <p className="promo">{ this.props.promoCode }</p> :
+            <p><input type="text" name="promo-code" onChange={ this.handlePromoCodeInputChange }/></p>;
+
+        let button = this.props.entered ?
+            <button onClick={ this.props.removePromoCode }>Remove</button> :
+            <button onClick={ this.handlePromoCodeEnter }>Enter</button>;
+
         return (
             <div className="pc-container">
                 <p className="current-discount">Current discount: { this.props.discount }%</p>
-                <p>Promo Code:</p>
-                <p><input type="text" name="promo-code" onChange={ this.handlePromoCodeInputChange } /></p>
-                <button onClick={ this.props.handlePromoCodeEnter( ) }>Enter</button>
+                <p>Promo Code: </p>
+                { input }
+                { button }
 
                 <style jsx>{`
                     .pc-container {
@@ -41,6 +49,12 @@ export default class extends React.Component {
                         display: inline-block;
                         vertical-align: top;
                         margin-top: 10px;
+                    }
+
+                    .promo {
+                        font-weight: bold;
+                        font-size: 16px;
+                        margin-top: 0;
                     }
 
                     .current-discount {

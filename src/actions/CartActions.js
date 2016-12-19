@@ -39,3 +39,9 @@ export function handlePromoCodeEnter (promoCode) {
         promoCode: promoCode
     }
 }
+
+export function removePromoCode () {
+    return {
+        type: actionTypes.REMOVE_PROMO
+    }
+}
