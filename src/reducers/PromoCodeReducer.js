@@ -2,7 +2,7 @@
  * Created by yura on 19.12.16.
  */
 
-import { ENTER_DISCOUNT } from '../actions/ActionTypes';
+import { ENTER_PROMO } from '../actions/ActionTypes';
 import _ from 'lodash';
 
 const initialState = {
@@ -27,7 +27,7 @@ function getDiscount(promoCode) {
 
 export default function(state = initialState, action) {
     switch (action.type) {
-        case ENTER_DISCOUNT:
+        case ENTER_PROMO:
             return Object.assign({}, state, { promoCode: action.promoCode, discount: getDiscount(action.promoCode) });
 
         default:

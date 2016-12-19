@@ -27,7 +27,7 @@ export default ({ productsInCart, totalCost, actions }) => {
 
             <style jsx>{`
                 .sc-container {
-                    width: 200px;
+                    width: 100%;
                     border: 1px solid black;
                     min-height: 10px;
                     padding: 20px 25px;

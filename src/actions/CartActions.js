@@ -33,9 +33,9 @@ export function decrementProductCount (id) {
     }
 }
 
-export function handleDiscountEnter (promoCode) {
+export function handlePromoCodeEnter (promoCode) {
     return {
-        type: actionTypes.ENTER_DISCOUNT,
+        type: actionTypes.ENTER_PROMO,
         promoCode: promoCode
     }
 }

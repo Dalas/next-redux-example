@@ -4,6 +4,7 @@ import { Provider } from 'react-redux';
 import store from '../src/store/mainStore';
 import ProductList from '../src/containers/ProductListContainer';
 import ShoppingCart from '../src/containers/ShoppingCartContainer';
+import PromoCode from '../src/containers/PromoCodeContainer';
 
 
 export default class extends React.Component {
@@ -22,7 +23,7 @@ export default class extends React.Component {
 
     render() {
         return (
-            <div>
+            <div className="main">
                 <Head>
                     <title>My page title</title>
                     <meta name="viewport" content="initial-scale=1.0, width=device-width" />
@@ -33,15 +34,27 @@ export default class extends React.Component {
                     <ProductList />
                 </Provider>
 
-                <Provider store={ this.store }>
-                    <ShoppingCart />
-                </Provider>
+                <div className="right-sidebar">
+                    <Provider store={ this.store }>
+                        <ShoppingCart />
+                    </Provider>
+
+                    <Provider store={ this.store }>
+                        <PromoCode />
+                    </Provider>
+                </div>
 
                 <style jsx>{`
-                    div {
+                    div.main {
                         text-align: justify;
                         width: 1000px;
                         margin: 0 auto;
+                    }
+
+                    .right-sidebar {
+                        width: 250px;
+                        display: inline-block;
+                        vertical-align: top;
                     }
                 `}</style>
             </div>

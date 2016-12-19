@@ -2,7 +2,7 @@ import React from 'react';
 import Product from './ProductComponent';
 
 
-export default ({ products, actions }) => {
+export default ({ products, discount, actions }) => {
     return (
         <div className="products-container">
             { products.map( (product, index) =>
@@ -13,6 +13,7 @@ export default ({ products, actions }) => {
                     description={ product.description }
                     cost={ product.cost }
                     added={ product.addedToCart }
+                    discount={ discount }
                     key={ index }
                     addToCart={() => actions.addToCart( product ) }
                     removeFromCart={() => actions.removeFromCart( product )}
