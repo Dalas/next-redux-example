@@ -40,7 +40,7 @@ export default class extends React.Component {
                 { input }
                 { button }
 
-                <style jsx>{`
+                <style>{`
                     .pc-container {
                         width: 100%;
                         border: 1px solid black;

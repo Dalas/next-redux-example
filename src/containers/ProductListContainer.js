@@ -8,7 +8,7 @@ import ProductListComponent from '../components/ProductListComponent';
 import * as actions from '../actions/CartActions';
 
 const mapStateToProps = ( state ) => {
-    return {...state['plReducer'], ...state['pcReducer']};
+    return {...state.productList, ...state.promoCode};
 };
 
 const mapDispatchToProps = ( dispatch ) => {

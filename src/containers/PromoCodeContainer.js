@@ -7,7 +7,7 @@ import { connect } from 'react-redux';
 import { handlePromoCodeEnter, removePromoCode } from '../actions/CartActions';
 
 const mapStateToProps = ( state ) => {
-    return state['pcReducer'];
+    return state.promoCode;
 };
 
 const mapDispatchToProps = ( dispatch ) => {

@@ -3,15 +3,15 @@
  */
 
 import { createStore, combineReducers } from 'redux';
-import plReducer from '../reducers/ProductListReducer';
-import scReducer from '../reducers/ShoppingCartReducer';
-import pcReducer from '../reducers/PromoCodeReducer';
+import productListReducer from '../reducers/ProductListReducer';
+import shoppingCartReducer from '../reducers/ShoppingCartReducer';
+import promoCodeReducer from '../reducers/PromoCodeReducer';
 
 
 export default createStore(
     combineReducers({
-        plReducer: plReducer,
-        scReducer: scReducer,
-        pcReducer: pcReducer
+        productList: productListReducer,
+        shoppingCart: shoppingCartReducer,
+        promoCode: promoCodeReducer
     })
 );

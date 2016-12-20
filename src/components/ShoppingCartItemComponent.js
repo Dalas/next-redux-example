@@ -21,9 +21,6 @@ export default ({ product, discount, incrementCount, decrementCount }) => {
             <p>Total cost: ${ parseFloat(product.cost * product.count).toFixed(2) }</p>
 
             <style jsx>{`
-                div {
-
-                }
                 i {
                     cursor: pointer;
                 }
