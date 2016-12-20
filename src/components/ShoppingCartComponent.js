@@ -14,6 +14,7 @@ export default ({ productsInCart, totalCost, discount, actions }) => {
             { Object.keys( productsInCart ).map(function(key){
                 return (
                     <ShoppingCartItem
+                        product={ productsInCart[key] }
                         title={ productsInCart[key].title }
                         count={ productsInCart[key].count }
                         maxCount={  productsInCart[key].maxCount }

@@ -5,20 +5,20 @@
 import React from 'react';
 
 
-export default ({ title, availableCount, imgUrl, description, cost, added, discount, addToCart, removeFromCart }) => {
-    discount = parseFloat(cost * discount / 100).toFixed(2);
+export default ({ product, discount, addToCart, removeFromCart }) => {
+    discount = parseFloat(product.cost * discount / 100).toFixed(2);
 
     return (
         <div className="productWrapper">
-            <h2>{ title }</h2>
+            <h2>{ product.title }</h2>
             <div className="imageWrapper">
-                <img src={ imgUrl } />
+                <img src={ product.imgUrl } />
             </div>
-            <p>Cost: <span className={ discount > 0 ? 'red' : '' }>${ parseFloat(cost).toFixed(2) }</span><span className={ discount > 0 ? 'green' : 'hidden' }> ${ parseFloat(cost - discount).toFixed(2) } </span></p>
-            <p>Available count: { availableCount }</p>
-            <p>{ description }</p>
+            <p>Cost: <span className={ discount > 0 ? 'red' : '' }>${ parseFloat(product.cost).toFixed(2) }</span><span className={ discount > 0 ? 'green' : 'hidden' }> ${ parseFloat(product.cost - discount).toFixed(2) } </span></p>
+            <p>Available count: { product.availableCount }</p>
+            <p>{ product.description }</p>
 
-            <button className={ added ? 'remove' : 'add' } onClick={ added ? removeFromCart : addToCart } >{ added ? 'Remove from cart!' : 'Add to cart!' }</button>
+            <button className={ product.added ? 'remove' : 'add' } onClick={ product.added ? removeFromCart : addToCart } >{ product.added ? 'Remove from cart!' : 'Add to cart!' }</button>
 
             <style jsx>{`
                 h2 {

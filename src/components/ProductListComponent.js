@@ -7,12 +7,7 @@ export default ({ products, discount, actions }) => {
         <div className="products-container">
             { products.map( (product, index) =>
                 <Product
-                    title={ product.title }
-                    availableCount={ product.availableCount }
-                    imgUrl={ product.imgUrl }
-                    description={ product.description }
-                    cost={ product.cost }
-                    added={ product.addedToCart }
+                    product={ product }
                     discount={ discount }
                     key={ index }
                     addToCart={() => actions.addToCart( product ) }

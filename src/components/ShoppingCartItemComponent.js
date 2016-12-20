@@ -5,20 +5,20 @@
 import React from 'react';
 
 
-export default ({ title, count, maxCount, cost, discount, incrementCount, decrementCount }) => {
-    cost = parseFloat(cost - cost * discount / 100).toFixed(2);
+export default ({ product, discount, incrementCount, decrementCount }) => {
+    let cost = parseFloat(product.cost - product.cost * discount / 100).toFixed(2);
 
     return (
         <div>
-            <p className="title">{ title }</p>
+            <p className="title">{ product.title }</p>
             <p>Cost: ${ parseFloat(cost).toFixed(2) }</p>
             <p>
                 Count:
-                &nbsp;{ count > 1 ? <i className="fa fa-minus-square" onClick={ decrementCount } /> : ''}
-                &nbsp;{ count }
-                &nbsp;{ count < maxCount ? <i className="fa fa-plus-square" onClick={ incrementCount } /> : ''}
+                &nbsp;{ product.count > 1 ? <i className="fa fa-minus-square" onClick={ decrementCount } /> : ''}
+                &nbsp;{ product.count }
+                &nbsp;{ product.count < product.maxCount ? <i className="fa fa-plus-square" onClick={ incrementCount } /> : ''}
             </p>
-            <p>Total cost: ${ parseFloat(cost * count).toFixed(2) }</p>
+            <p>Total cost: ${ parseFloat(product.cost * product.count).toFixed(2) }</p>
 
             <style jsx>{`
                 div {
