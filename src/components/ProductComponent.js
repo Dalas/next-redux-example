@@ -18,7 +18,7 @@ export default ({ product, discount, addToCart, removeFromCart }) => {
             <p>Available count: { product.availableCount }</p>
             <p>{ product.description }</p>
 
-            <button className={ product.added ? 'remove' : 'add' } onClick={ product.added ? removeFromCart : addToCart } >{ product.added ? 'Remove from cart!' : 'Add to cart!' }</button>
+            <button className={ product.addedToCart ? 'remove' : 'add' } onClick={ product.addedToCart ? removeFromCart : addToCart } >{ product.added ? 'Remove from cart!' : 'Add to cart!' }</button>
 
             <style jsx>{`
                 h2 {
