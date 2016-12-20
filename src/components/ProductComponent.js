@@ -6,14 +6,15 @@ import React from 'react';
 
 
 export default ({ title, availableCount, imgUrl, description, cost, added, discount, addToCart, removeFromCart }) => {
+    discount = parseFloat(cost * discount / 100).toFixed(2);
+
     return (
         <div className="productWrapper">
             <h2>{ title }</h2>
             <div className="imageWrapper">
                 <img src={ imgUrl } />
             </div>
-            <p>Cost: ${ cost }</p>
-            <p>Discount: ${ parseFloat(cost * discount / 100) }</p>
+            <p>Cost: <span className={ discount > 0 ? 'red' : '' }>${ parseFloat(cost).toFixed(2) }</span><span className={ discount > 0 ? 'green' : 'hidden' }> ${ parseFloat(cost - discount).toFixed(2) } </span></p>
             <p>Available count: { availableCount }</p>
             <p>{ description }</p>
 
@@ -66,6 +67,19 @@ export default ({ title, availableCount, imgUrl, description, cost, added, disco
                 .imageWrapper img {
                     width: 100%;
                     height: 100%;
+                }
+
+                .red {
+                    color: #d83838;
+                    text-decoration: line-through;
+                }
+
+                .green {
+                    color: #0a9a0a;
+                }
+
+                .hidden {
+                    display: none;
                 }
             `}</style>
         </div>

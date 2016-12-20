@@ -27,7 +27,6 @@ function getDiscount(promoCode) {
 }
 
 export default function(state = initialState, action) {
-    console.log(action)
     switch (action.type) {
         case ENTER_PROMO:
             return Object.assign({}, state, { promoCode: action.promoCode, discount: getDiscount(action.promoCode), entered: true });

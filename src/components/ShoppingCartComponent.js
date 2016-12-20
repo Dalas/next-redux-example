@@ -6,10 +6,10 @@ import React from 'react';
 import ShoppingCartItem from './ShoppingCartItemComponent';
 
 
-export default ({ productsInCart, totalCost, actions }) => {
+export default ({ productsInCart, totalCost, discount, actions }) => {
     return (
         <div className="sc-container">
-            <p className="summ-cost">Summ: { totalCost } $</p>
+            <p className="summ-cost">Summ: { parseFloat(totalCost - totalCost * discount / 100).toFixed(2) } $</p>
 
             { Object.keys( productsInCart ).map(function(key){
                 return (
@@ -18,6 +18,7 @@ export default ({ productsInCart, totalCost, actions }) => {
                         count={ productsInCart[key].count }
                         maxCount={  productsInCart[key].maxCount }
                         cost={ productsInCart[key].cost }
+                        discount={ discount }
                         incrementCount={ () => actions.incrementProductCount( productsInCart[key].id ) }
                         decrementCount={ () => actions.decrementProductCount( productsInCart[key].id ) }
                         key={ key }

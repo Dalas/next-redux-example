@@ -5,7 +5,9 @@
 import React from 'react';
 
 
-export default ({ title, count, maxCount, cost, incrementCount, decrementCount }) => {
+export default ({ title, count, maxCount, cost, discount, incrementCount, decrementCount }) => {
+    cost = parseFloat(cost - cost * discount / 100).toFixed(2);
+
     return (
         <div>
             <p className="title">{ title }</p>

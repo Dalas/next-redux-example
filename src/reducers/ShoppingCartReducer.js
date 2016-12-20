@@ -7,7 +7,7 @@ import * as actionTypes from '../actions/ActionTypes';
 
 const initialState = {
     productsInCart: {},
-    totalCost: 0
+    totalCost: 0.0
 };
 
 export default function shoppingCartReducer(state = initialState, action) {
