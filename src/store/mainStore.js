@@ -3,15 +3,13 @@
  */
 
 import { createStore, combineReducers } from 'redux';
-import productListReducer from '../reducers/ProductListReducer';
-import shoppingCartReducer from '../reducers/ShoppingCartReducer';
-import promoCodeReducer from '../reducers/PromoCodeReducer';
+import tasksReducer from '../reducers/TasksReducer';
+import groupReducer from '../reducers/GroupReducer';
 
 
 export default createStore(
     combineReducers({
-        productList: productListReducer,
-        shoppingCart: shoppingCartReducer,
-        promoCode: promoCodeReducer
+        tasks: tasksReducer,
+        group: groupReducer
     })
 );

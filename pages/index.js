@@ -2,9 +2,6 @@ import React from 'react'
 import Head from 'next/head';
 import { Provider } from 'react-redux';
 import store from '../src/store/mainStore';
-import ProductList from '../src/containers/ProductListContainer';
-import ShoppingCart from '../src/containers/ShoppingCartContainer';
-import PromoCode from '../src/containers/PromoCodeContainer';
 
 
 export default class extends React.Component {
@@ -26,37 +23,44 @@ export default class extends React.Component {
             <div className="main">
                 <Head>
                     <title>My page title</title>
-                    <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-                    <link rel="stylesheet" href="/static/css/font-awesome.min.css" />
+                    <meta charset="utf-8"/>
+                        <title>Course project constructor</title>
+
+                        <link href="/static/css/bootstrap.grid.css" rel="stylesheet" />
+                        <link href="/static/css/materialize.min.css" rel="stylesheet" />
+                        <link href="/static/css/styles.css" rel="stylesheet" />
+
+                        <script src="/static/js/jq.js"></script>
+                        <script src="/static/js/init.js"></script>
+                        <script src="/static/js/materialize.min.js"/>
                 </Head>
 
-                <Provider store={ this.store }>
-                    <ProductList />
-                </Provider>
+                <nav className="teal lighten-1" role="navigation">
+                    <div className="nav-wrapper container-big"><a id="logo-container" href="/" className="brand-logo">Digital Education</a>
+                        <ul className="right hide-on-med-and-down">
+                            <li className="waves-effect waves-light"><a href="#">About Us</a></li>
+                            <li className="waves-effect waves-light"><a href="/login">Login</a></li>
+                        </ul>
 
-                <div className="right-sidebar">
-                    <Provider store={ this.store }>
-                        <ShoppingCart />
-                    </Provider>
+                        <ul id="nav-mobile" className="side-nav">
+                            <li><a href="#">Navbar Link</a></li>
+                            <li><a href="/login">Login</a></li>
+                        </ul>
+                        <a href="#" data-activates="nav-mobile" className="button-collapse"><i className="material-icons">menu</i></a>
+                    </div>
+                </nav>
 
-                    <Provider store={ this.store }>
-                        <PromoCode />
-                    </Provider>
+                <div className="container-big">
+
                 </div>
 
-                <style jsx>{`
-                    div.main {
-                        text-align: justify;
-                        width: 1000px;
-                        margin: 0 auto;
-                    }
-
-                    .right-sidebar {
-                        width: 250px;
-                        display: inline-block;
-                        vertical-align: top;
-                    }
-                `}</style>
+                <footer className="page-footer teal">
+                    <div className="container-big">
+                        <div className="row shades-text text-white">
+                            Nure
+                        </div>
+                    </div>
+                </footer>
             </div>
         )
     }

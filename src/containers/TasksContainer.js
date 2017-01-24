@@ -4,11 +4,11 @@
 
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import ProductListComponent from '../components/ProductListComponent';
-import * as actions from '../actions/CartActions';
+import TasksComponent from '../components/TasksComponent';
+import * as actions from '../actions/Actions';
 
 const mapStateToProps = ( state ) => {
-    return {...state.productList, ...state.promoCode};
+    return { ...state.tasks, ...state.group };
 };
 
 const mapDispatchToProps = ( dispatch ) => {
@@ -20,6 +20,6 @@ const mapDispatchToProps = ( dispatch ) => {
 const ProductListContainer = connect(
     mapStateToProps,
     mapDispatchToProps
-)( ProductListComponent );
+)( TasksComponent );
 
 export default ProductListContainer;

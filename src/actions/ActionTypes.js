@@ -2,10 +2,7 @@
  * Created by yura on 16.12.16.
  */
 
-export const ADD_TO_CART = "ADD_TO_CART";
-export const REMOVE_FROM_CART = "REMOVE_FROM_CART";
-export const INCREMENT_PRODUCT = "INCREMENT_PRODUCT";
-export const DECREMENT_PRODUCT = "DECREMENT_PRODUCT";
-
-export const ENTER_PROMO = "ENTER_DISCOUNT";
-export const REMOVE_PROMO = "REMOVE_PROMO";
+export const SAVE_TASK = "SAVE_TASK";
+export const ADD_NEW_TASK = "ADD_NEW_TASK";
+export const REMOVE_TASK = "REMOVE_TASK";
+export const CHANGE_GROUP = "CHANGE_GROUP";
